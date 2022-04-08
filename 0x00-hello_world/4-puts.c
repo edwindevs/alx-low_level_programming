@@ -1,9 +1,8 @@
 #include <stdio.h>
-
 /**
- * main Print statement
+ * main: Print statement
  *
- * Return 0 after output
+ * Return: 0 after output
  */
 int main(void)
 {
