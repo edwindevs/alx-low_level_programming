@@ -43,8 +43,3 @@ void jack_bauer(void)
 		hours_tens++;
 	}
 }
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Statu
