@@ -1,31 +1,32 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- * is_prime_number - check if n is a prime number
- * @n: int
- * Return: 0 or 1
+ * sqrt_a - main - check the code
+ * @a: number
+ * @b: number of power
+ * Return: Always 0.
  */
 
-
-int is_prime_number(int n)
+int sqrt_a(int a, int b)
 {
-	return (check_prime(n, 2));
+	if (b * b == a)
+	{
+		return (b);
+	}
+	else if (b * b > a)
+	{
+		return (-1);
+	}
+	return (sqrt_a(a, b + 1));
 }
 
 /**
- * check_prime - check all number < n if they can divide it
- * @n: int
- * @resp: int
- * Return: int
+ * _sqrt_recursion - main - check the code
+ * @n: number
+ *
+ * Return: Always 0.
  */
-
-int check_prime(int n, int resp)
+int _sqrt_recursion(int n)
 {
-
-	if (resp >= n && n > 1)
-		return (1);
-	else if (n % resp == 0 || n <= 1)
-		return (0);
-	else
-		return (check_prime(n, resp + 1));
+	return (sqrt_a(n, 0));
 }
