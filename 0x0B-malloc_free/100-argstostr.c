@@ -1,43 +1,42 @@
 #include "main.h"
+#include <stdlib.h>
 /**
- * argstostr - prints args
- * @ac: takes in width of grid
- * @av: height of grid
- * Return: the args one line at a time
- */
-
+  *argstostr - concatenates all arguments of the program.
+  *@ac: argument count.
+  *@av: pointer to array of size ac.
+  *Return: NULL if ac == 0 or av == null, Pointer to new string.
+  *NULL on fail.
+  */
 char *argstostr(int ac, char **av)
 {
+	int i, n, k = 0, len = 0;
 	char *str;
-	int count = 0, a = 0, b = 0, c = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	while (a < ac)
+
+	for (i = 0; i < ac; i++)
 	{
-		b = 0;
-		while (av[a][b] != '\0')
-		{
-			count++;
-			b++;
-		}
-		a++;
+		for (n = 0; av[i][n]; n++)
+			len++;
 	}
-	count = count + ac + 1;
-	str = malloc(sizeof(char) * count);
+	len += ac;
+
+	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
-	{
 		return (NULL);
-	}
-	for (a = 0; a < ac; a++)
+
+	for (i = 0; i < ac; i++)
 	{
-		for (b = 0; av[a][b] != '\0'; b++)
+		for (n = 0; av[i][n]; n++)
 		{
-			str[c] = av[a][b];
-			c++;
+			str[k] = av[i][n];
+			k++;
 		}
-		str[c] = '\n';
-		c++;
+		if (str[k] == '\0')
+		{
+			str[k++] = '\n';
+		}
 	}
 	return (str);
 }
