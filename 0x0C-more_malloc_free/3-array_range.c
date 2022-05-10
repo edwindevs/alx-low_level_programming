@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * array_range - The array created should contain all the values from min (included) to max
+ * array_range - The array of inters created
  * @min: first number
  * @max: last number
  * Return: pointer or null if it fails
