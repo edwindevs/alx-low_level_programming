@@ -5,7 +5,7 @@
  * array_range - The array created should contain all the values from min (included) to max
  * @min: first number
  * @max: last number
- * Return: int pointer
+ * Return: pointer or null if it fails
  */
 
 int *array_range(int min, int max)
