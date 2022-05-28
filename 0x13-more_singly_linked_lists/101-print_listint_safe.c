@@ -3,6 +3,7 @@
 /**
  * print_listint_safe - prints a linked list, safely
  * @head: list of type listint_t to print
+ * @diff: parameter
  *
  * Return: number of nodes in the list
  */
