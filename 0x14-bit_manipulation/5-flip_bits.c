@@ -8,15 +8,16 @@
  *
  * Return: The necessary number of bits to flip to get from n to m.
  */
+
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int xor = n ^ m, bits = 0;
+	unsigned int len;
 
-	while (xor > 0)
+	for (len = 0; n || m; n >>= 1, m >>= 1)
 	{
-		bits += (xor & 1);
-		xor >>= 1;
+		if ((n & 1) != (m & 1))
+			len++;
 	}
 
-	return (bits);
+	return (len);
 }
